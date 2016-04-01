@@ -10,7 +10,8 @@ export default Ember.Component.extend({
       var params = {
         question: this.get('question'),
         author: this.get('q-author'),
-        notes: this.get('q-notes')
+        notes: this.get('q-notes'),
+        posted: new Date()
       };
       this.set('addNewQuestion', false);
       this.set('question', "");

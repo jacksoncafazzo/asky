@@ -1,1 +1,8 @@
+<h1>Welcome to Asky</h1>
+<h3>Ask away!</h3>
 {{new-question save2="saveQuestion"}}
+<ul>
+{{#each model.questions as |question|}}
+  {{question-tile question=question}}
+{{/each}}
+</ul>

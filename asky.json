@@ -1,0 +1,16 @@
+{ "questions": [{
+  "question": "Whaaaaaa?",
+  "author": "Jackson",
+  "notes": "uh wha happan?",
+  "posted": "this is a date"
+  }],
+  "answers": [{
+    "answer": "Dat happan",
+    "author": "Hankie",
+    "posted": "This is also a date"
+    }, {
+    "answer": "Make toast",
+    "author": "Toasty",
+    "posted": "Guess what: date"
+    }]
+}
