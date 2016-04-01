@@ -7,11 +7,18 @@ export default Ember.Component.extend({
       this.set('addNewQuestion', true);
     },
     save1() {
+      var newDate = new Date();
+      var newDay = newDate.getDay();
+      var newMonth = newDate.getMonth();
+      var newYear = newDate.getFullYear();
+      var newHours = newDate.getHours();
+      var newMinutes = newDate.getMinutes();
+      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       var params = {
         question: this.get('question'),
         author: this.get('q-author'),
         notes: this.get('q-notes'),
-        posted: new Date()
+        posted: months[newMonth] + " " + newDay + " " + newYear + " at " + newHours + ":" + newMinutes
       };
       this.set('addNewQuestion', false);
       this.set('question', "");

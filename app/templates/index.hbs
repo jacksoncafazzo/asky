@@ -3,6 +3,6 @@
 {{new-question save2="saveQuestion"}}
 <ul>
 {{#each model.questions as |question|}}
-  {{question-tile question=question}}
+  {{question-tile question=question update="update" destroyQuestion="destroyQuestion"}}
 {{/each}}
 </ul>
