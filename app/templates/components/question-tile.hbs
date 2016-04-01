@@ -1,13 +1,6 @@
 <li>
   {{#link-to 'question' question.id}}
   <h2>{{question.question}}</h2>{{/link-to}}
-  <p>{{question.author}} at {{question.posted}}</p>
-  <p>{{question.notes}}</p>
-  <ul>
-      {{#each question.answers as |answer|}}
-      {{answer-tile answer=answer update="update" destroyAnswer="destroyAnswer"}}
-      {{/each}}
-  </ul>
-  {{update-question question=question update="update"}}
+  <h4>Asked by: {{question.author}}</h4>
   <button {{action 'delete' question}}>Delete Question</button>
 </li>

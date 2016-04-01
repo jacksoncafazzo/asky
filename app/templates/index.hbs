@@ -1,8 +1,11 @@
-<h1>Welcome to Asky</h1>
-<h3>Ask away!</h3>
-{{new-question save2="saveQuestion"}}
-<ul>
-{{#each model.questions as |question|}}
-  {{question-tile question=question update="update" destroyQuestion="destroyQuestion"}}
-{{/each}}
-</ul>
+<div class="main-content">
+  <img src="/assets/images/asky.png" alt="asky the question mark" class="asky">
+  <h1>Asky</h1>
+  <h3>Ask away!</h3>
+  {{new-question save2="saveQuestion"}}
+  <ul>
+    {{#each model.questions as |question|}}
+    {{question-tile question=question update="update" destroyQuestion="destroyQuestion"}}
+    {{/each}}
+  </ul>
+</div>

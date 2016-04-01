@@ -10,13 +10,35 @@ body {
 
 ul {
   list-style: none;
+  padding-left: 0px;
 }
 
 .navbar {
   width: 100%;
 }
 
+.main-content {
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
+  background-color: #e9eae9;
+}
+
 .question-details {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+.question-man {
+  border-width: 2px;
+  border-style: solid;
+}
+
+.about {
+  padding-left: 30%;
+  padding-right: 30%;
+  text-align: center;
+  background-color: #e9eae9;
+  border-radius: 10px;
+
 }
