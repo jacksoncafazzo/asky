@@ -18,8 +18,9 @@ export default Ember.Component.extend({
         question: this.get('question'),
         author: this.get('q-author'),
         notes: this.get('q-notes'),
-        posted: months[newMonth] + " " + newDay + " " + newYear + " at " + newHours + ":" + newMinutes
+        posted: months[newMonth] + " " + newDay + " " + newYear + " at " + newHours + ":" + newMinutes,
       };
+      console.log(params);
       this.set('addNewQuestion', false);
       this.set('question', "");
       this.set('q-author', "");

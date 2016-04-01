@@ -10,13 +10,11 @@
   <div class="answers">
     <ul>
       {{#each question.answers as |answer|}}
-      {{answer-tile answer=answer}}
+      {{answer-tile answer=answer vote="vote"}}
       {{/each}}
     </ul>
   </div>
   <hr>
-
   {{update-question question=question update="update"}}
   <button {{action 'delete' question}}>Delete Question</button>
 </div>
-{{#link-to 'index'}}Back Home{{/link-to}}

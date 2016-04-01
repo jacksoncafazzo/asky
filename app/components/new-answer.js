@@ -18,7 +18,8 @@ export default Ember.Component.extend({
         answer: this.get('answer'),
         author: this.get('author'),
         posted: months[newMonth] + " " + newDay + " " + newYear + " at " + newHours + ":" + newMinutes,
-        question: this.get('question')
+        question: this.get('question'),
+        votes: 0
       };
       this.set('addNewAnswer', false);
       this.sendAction('saveAnswer2', params);

@@ -7,7 +7,6 @@ export default Ember.Route.extend({
   actions: {
     saveAnswer3(params) {
       var newAnswer = this.store.createRecord('answer', params);
-      console.log(newAnswer);
       var question = params.question;
       question.get('answers').addObject(newAnswer);
       newAnswer.save().then(function() {
@@ -16,7 +15,23 @@ export default Ember.Route.extend({
       this.transitionTo('question', params.question);
     },
     update(question, params) {
-      this.sendAction('update', question, params);
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          question.set(key,params[key]);
+        }
+      });
+      question.save();
+      this.transitionTo('question', question);
+    },
+    vote(answer, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          answer.set(key,params[key]);
+          console.log(key,params[key]);
+        }
+      });
+      answer.save();
+      this.transitionTo('question', params.question);
     }
   }
 });

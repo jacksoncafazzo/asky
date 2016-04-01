@@ -1,0 +1,8 @@
+{{#if showVotes}}
+<p>Votes: {{answer.votes}}</p>
+<div class="votes">
+<img src="/assets/images/thumbs-up.png" alt="up-vote" {{action 'upVote' answer}} />
+<img src="/assets/images/thumbs-down.png" alt="down-vote" {{action 'downVote' answer}} />
+</div>
+{{else}}
+{{/if}}
