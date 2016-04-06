@@ -15,6 +15,8 @@ export default Ember.Route.extend({
       this.transitionTo('question', params.question);
     },
     update(question, params) {
+      console.log(question);
+      console.log(params);
       Object.keys(params).forEach(function(key) {
         if(params[key]!==undefined) {
           question.set(key,params[key]);
@@ -30,7 +32,13 @@ export default Ember.Route.extend({
         }
       });
       answer.save();
-      this.transitionTo('question', answer.question.id);
-    }
+      this.transitionTo('index');
+    },
+    delete(question) {
+      if (confirm('Are you sure you want to delete this question?')) {
+        question.destroyRecord();
+        this.transitionTo('index');
+      }
+    },
   }
 });

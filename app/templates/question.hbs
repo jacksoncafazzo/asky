@@ -2,6 +2,6 @@
 {{question-details question=model update='update' destroyQuestion='destroyQuestion' vote="vote"}}
 
 {{new-answer saveAnswer2="saveAnswer3" question=model}}
-{{update-question question=question update="update"}}
-<a class="btn" {{action 'delete' question}}>Delete Question</a>
+{{update-question question=model update="update"}}
+<a class="btn" {{action 'delete' model}}>Delete Question</a>
 </div>

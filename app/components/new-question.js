@@ -15,14 +15,14 @@ export default Ember.Component.extend({
       var newMinutes = newDate.getMinutes();
       var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       var params = {
-        question: this.get('question'),
+        title: this.get('title'),
         author: this.get('q-author'),
         notes: this.get('q-notes'),
         posted: months[newMonth] + " " + newDay + " " + newYear + " at " + newHours + ":" + newMinutes,
       };
       console.log(params);
       this.set('addNewQuestion', false);
-      this.set('question', "");
+      this.set('title', "");
       this.set('q-author', "");
       this.set('q-notes', "");
       this.sendAction('save2', params);
