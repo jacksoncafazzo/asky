@@ -22,9 +22,9 @@
           {{input value=notes id="q-notes" placeholder=question.notes}}
         </div>
 
-        <button {{action 'update' question}}>Update it!</button>
+        <a class="btn" {{action 'update' question}}>Update it!</a>
       </form>
     </div>
 {{else}}
-    <button {{action 'updateQuestionForm'}}>Update Question Form</button>
+    <a class="btn" {{action 'updateQuestionForm'}}>Update Question Form</a>
 {{/if}}

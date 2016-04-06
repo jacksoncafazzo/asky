@@ -1,6 +1,7 @@
-<li class="answer">
-  <h4>{{answer.answer}}</h4>
-  <p>By: {{answer.author}}</p>
-  <p>Answered At: {{answer.posted}}</p>
+{{#md-card-collapsible class="answers"}}
+  {{#md-collapsible title=answer.answer}}
+  By: {{answer.author}}<br>
+  {{answer.posted}}
   {{answer-voting answer=answer vote="vote"}}
-</li>
+  {{/md-collapsible}}
+{{/md-card-collapsible}}

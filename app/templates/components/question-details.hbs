@@ -1,20 +1,17 @@
 <div class="row question-details">
-  <h2>This is the question you are looking for...</h2>
   <div class="q-display">
-    <h1>{{question.question}}</h1>
-    <p class="q-author"><strong>Asked by:</strong> {{question.author}}</p>
+    <h3>{{question.question}}</h3>
+    <h4 class="q-author">{{question.author}}</h4>
   </div>
   <div class="q-notes">
-    <p><strong>Notes</strong> {{question.notes}}</p>
+    <h5>{{question.notes}}</h5>
   </div>
   <div class="answers">
-    <ul>
-      {{#each question.answers as |answer|}}
-      {{answer-tile answer=answer vote="vote"}}
-      {{/each}}
-    </ul>
+    <hr>
+    <h5>Answers to the question</h5>
+    {{#each question.answers as |answer|}}
+    {{answer-tile answer=answer vote="vote"}}
+    {{/each}}
   </div>
   <hr>
-  {{update-question question=question update="update"}}
-  <button {{action 'delete' question}}>Delete Question</button>
 </div>

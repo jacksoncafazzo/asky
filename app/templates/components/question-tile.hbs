@@ -1,6 +1,8 @@
-<li>
+{{#md-card id="question-card" class="question-card"}}
+  {{#md-card-content}}
   {{#link-to 'question' question.id}}
-  <h2>{{question.question}}</h2>{{/link-to}}
-  <h4>Asked by: {{question.author}}</h4>
-  <button {{action 'delete' question}}>Delete Question</button>
-</li>
+  <h5>{{question.question}}</h5>{{/link-to}}
+  <p>Asked by: {{question.author}}</p>
+  <button class="btn waves waves-blue" {{action 'delete' question}}>Delete</button>
+  {{/md-card-content}}
+{{/md-card}}
