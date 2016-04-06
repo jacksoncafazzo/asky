@@ -27,11 +27,10 @@ export default Ember.Route.extend({
       Object.keys(params).forEach(function(key) {
         if(params[key]!==undefined) {
           answer.set(key,params[key]);
-          console.log(key,params[key]);
         }
       });
       answer.save();
-      this.transitionTo('question', params.question);
+      this.transitionTo('question', answer.question.id);
     }
   }
 });

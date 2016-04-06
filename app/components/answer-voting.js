@@ -1,6 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  voteUp: Ember.computed('answer.votes', function() {
+    var votes = this.get('answer.votes');
+    console.log("this is the votes", votes);
+    return this.get('answer.votes');
+  }),
   showVotes: true,
   actions: {
     showVotes() {
@@ -9,26 +14,25 @@ export default Ember.Component.extend({
     hideVotes() {
       this.set('showVotes', false);
     },
+
     upVote(answer) {
-      var votes = answer.votes + 1;
+      var votes = this.get('answer.votes');
+      if (isNaN(votes)) {
+        votes = 0;
+      }
       var params = {
-        answer: answer.answer,
-        author: answer.author,
-        posted: answer.posted,
-        question: answer.question,
-        votes: votes
+        votes: votes + 1
       };
       this.set('showVotes', true);
       this.sendAction('vote', answer, params);
     },
     downVote(answer) {
-      var votes = answer.votes - 1;
+      if (isNaN(votes)) {
+        votes = 0;
+      }
+      var votes = this.get('answer.votes');
       var params = {
-        answer: answer.answer,
-        author: answer.author,
-        posted: answer.posted,
-        question: answer.question,
-        votes: votes
+        votes: votes - 1
       };
       this.set('showVotes', true);
       this.sendAction('vote', answer, params);
