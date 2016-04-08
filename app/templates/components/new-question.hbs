@@ -2,22 +2,10 @@
   <h1>Ask A Question</h1>
     <div>
       <form class="new-question">
-        <div class="form-group">
-          <label for="title">What is your question?</label>
-          {{input value=title id="title"}}
-        </div>
-
-        <div class="form-group">
-          <label for="q-author">Who are you?</label>
-          {{input value=q-author id="q-author"}}
-        </div>
-
-        <div class="form-group">
-          <label for="q-notes">Notes</label>
-          {{input value=q-notes id="q-notes"}}
-        </div>
-
-        <button {{action 'save1'}}>Save</button>
+        {{md-input value=title label="What is your question?" class="col s5 validate=true"}}
+        {{md-input value=q-author label="Who are you?" class="col s5 validate=true"}}
+        {{md-input value=q-notes label="Any question notes?" class="col s5 validate=true"}}
+        {{md-btn text="Save" action='save1'}}
       </form>
     </div>
 {{else}}

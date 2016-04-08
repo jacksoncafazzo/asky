@@ -6,6 +6,11 @@ html, body {
   height: 100%;
 }
 
+h1 {
+  color: #93C54B;
+  text-shadow: 2px 2px 1px black;
+}
+
 .nav-wrapper {
   background-color: #93c54b;
 }
@@ -83,6 +88,17 @@ a:hover {
   color: #87c62c
 }
 
-input:focus {
-  border-color: #b8f75e;
+// label underline color
+.input-field {
+  label {
+    color: #b8f75e
+  }
+  input[type=text]:focus + label {
+    color: #b8f75e;
+    text-align: center;
+    font-size: +.5em;
+    text-shadow: 1px 1px 1px black;
+    border-color: #b8f75e;
+  }
+
 }

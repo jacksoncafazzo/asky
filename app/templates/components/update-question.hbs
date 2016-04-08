@@ -1,28 +1,13 @@
 {{#if updateQuestionForm}}
-  <h4>Update {{question.question}}</h4>
+  <h4>Update {{question.title}}</h4>
     <div>
       <form>
-        <div class="form-group">
-          <label for="new-question">Question</label>
-          {{input value=title id="new-question" placeholder=question.title}}
-        </div>
+        {{md-input value=title label=question.title class="col s5 validate=true"}}
+        {{md-input value=author label=question.author class="col s5 validate=true"}}
+        {{md-input value=notes label=question.notes class="col s5 validate=true"}}
+        {{md-input value=posted label=question.posted class="col s5 validate=true"}}
+        {{md-btn text="Update it!" action='update' question=question}}
 
-        <div class="form-group">
-          <label for="q-author">Author</label>
-          {{input value=author id="q-author" placeholder=question.author}}
-        </div>
-
-        <div class="form-group">
-          <label for="q-posted">Posted</label>
-          {{input value=posted id="q-posted" placeholder=question.posted}}
-        </div>
-
-        <div class="form-group">
-          <label for="q-notes">Notes</label>
-          {{input value=notes id="q-notes" placeholder=question.notes}}
-        </div>
-
-        <a class="btn" {{action 'update' question}}>Update it!</a>
       </form>
     </div>
 {{else}}
