@@ -3,5 +3,9 @@
 
 {{new-answer saveAnswer2="saveAnswer3" question=model session=session}}
 {{update-question update="update" question=model}}
+{{#if isCurrentUser}}
 <a class="btn" {{action 'delete' model}}>Delete Question</a>
+{{else}}
+you aint this user
+{{/if}}
 </div>

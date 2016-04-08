@@ -1,6 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  isCurrentUser: Ember.computed('session.currentUser.email', 'question.author', function() {
+    if (this.get('session.currentUser.email') === this.get('question.author')) {
+      return true;
+    }
+  }),
   beforeModel() {
     this.get('session').fetch().catch((error) => {
       console.log(error);
@@ -48,6 +53,6 @@ export default Ember.Route.extend({
     destroyAnswer(answer) {
       answer.destroyRecord();
       this.transitionTo('question', answer.question.id);
-    }
-  }
+    },
+  },
 });

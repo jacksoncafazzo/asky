@@ -16,7 +16,7 @@ export default Ember.Component.extend({
       var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       var params = {
         title: this.get('title'),
-        author: this.get('q-author'),
+        author: this.get('session.currentUser.email'),
         notes: this.get('q-notes'),
         posted: months[newMonth] + " " + newDay + " " + newYear + " at " + newHours + ":" + newMinutes,
       };
