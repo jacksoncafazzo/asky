@@ -10,7 +10,7 @@
     <hr>
     <h5>Answers to the question</h5>
     {{#each question.answers as |answer|}}
-    {{answer-tile answer=answer vote="vote"}}
+    {{answer-tile answer=answer vote="vote" deleteAnswer='deleteAnswer'}}
     {{/each}}
   </div>
   <hr>

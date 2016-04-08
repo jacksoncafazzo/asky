@@ -15,7 +15,7 @@ export default Ember.Component.extend({
       var newMinutes = newDate.getMinutes();
       var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
       var params = {
-        answer: this.get('answer'),
+        title: this.get('title'),
         author: this.get('author'),
         posted: months[newMonth] + " " + newDay + " " + newYear + " at " + newHours + ":" + newMinutes,
         question: this.get('question'),

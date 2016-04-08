@@ -2,17 +2,9 @@
   <h1>YEAH REALLY I KNOW THESE THINGS!</h1>
     <div>
       <form>
-        <div class="form-group">
-          <label for="answer">The Answer:</label>
-          {{input value=answer id="answer"}}
-        </div>
-
-        <div class="form-group">
-          <label for="a-author">Who are you?</label>
-          {{input value=author id="author"}}
-        </div>
-
-        <a class="btn" {{action 'save1'}}>Save</a>
+        {{md-input value=title label="I have the answer" class="col s5 validate=true"}}
+          {{md-input value=author label="and I am..." class="col s5 validate=true"}}
+      {{md-btn text="Save" action="save1"}}
       </form>
     </div>
 {{else}}

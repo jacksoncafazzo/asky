@@ -1,7 +1,7 @@
 <div class="question-details">
-{{question-details question=model update='update' destroyQuestion='destroyQuestion' vote="vote"}}
+{{question-details question=model update='update' destroyQuestion='destroyQuestion' destroyAnswer='destroyAnswer' answer=answer vote="vote"}}
 
 {{new-answer saveAnswer2="saveAnswer3" question=model}}
-{{update-question question=model update="update"}}
+{{update-question update="update" question=model}}
 <a class="btn" {{action 'delete' model}}>Delete Question</a>
 </div>
