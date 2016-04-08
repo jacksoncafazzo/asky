@@ -24,6 +24,9 @@ export default Ember.Controller.extend({
       }, (error) => {
         console.log(error);
       });
+    },
+    signOut() {
+      this.get('session').close();
     }
   }
 });

@@ -1,4 +1,5 @@
 {{#if session.isAuthenticated}}
+  <p>Logged in: {{session.currentUser.email}}</p> 
   {{#md-btn action="signOut"}}
   Sign Out
   {{/md-btn}}

@@ -1,6 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  beforeModel() {
+    this.get('session').fetch().catch((error) => {
+      console.log(error);
+    });
+  },
   model(){
     return Ember.RSVP.hash({
       questions: this.store.findAll('question'),
@@ -31,6 +36,6 @@ export default Ember.Route.extend({
       question.destroyRecord();
       this.transitionTo('index');
     },
-  
+
   }
 });
