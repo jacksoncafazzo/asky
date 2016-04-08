@@ -14,6 +14,16 @@ export default Ember.Controller.extend({
           controller.set('password', null);
         }
       });
+    },
+    signIn(provider, params) {
+      console.log(provider);
+      params['provider'] = provider;
+      this.get('session').open('firebase', params).then(() => {
+        // controller.set('email', null);
+        // controller.set('password', null);
+      }, (error) => {
+        console.log(error);
+      });
     }
   }
 });

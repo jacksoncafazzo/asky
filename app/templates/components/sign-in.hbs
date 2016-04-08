@@ -1,0 +1,36 @@
+{{#if showSignIn}}
+<div class='row'>
+  <h1>Sign In</h1>
+</div>
+{{input
+  type='text'
+  class='form-control'
+  value=email
+  placeholder='email'
+}}
+{{input
+  type='password'
+  class='form-control'
+  value=password
+  placeholder='password'
+}}
+{{#if session.isWorking}}
+Signing in
+<div class="preloader-wrapper small active">
+  <div class="spinner-layer spinner-green-only">
+    <div class="circle-clipper left">
+      <div class="circle"></div>
+    </div><div class="gap-patch">
+      <div class="circle"></div>
+    </div><div class="circle-clipper right">
+      <div class="circle"></div>
+    </div>
+  </div>
+</div>
+{{else}}
+<a class='btn btn-default'
+{{ action 'signIn' 'password'}}>Sign In</a>
+{{/if}}
+{{else}}
+  {{md-btn action="showSignIn" text="Sign In"}}
+{{/if}}

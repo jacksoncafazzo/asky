@@ -1,6 +1,13 @@
+{{#if session.isAuthenticated}}
+  {{#md-btn action="signOut"}}
+  Sign Out
+  {{/md-btn}}
+{{else}}
+{{sign-up signUp="signUp" user=user}}
+{{sign-in signIn="signIn" user=user password=password}}
+{{/if}}
 <div class="top-content">
   <h4>{{new-question save2="saveQuestion"}}</h4>
-  {{sign-up signUp="signUp"}}
 </div>
 <h3 class="center">The Questions</h3>
 <hr>
