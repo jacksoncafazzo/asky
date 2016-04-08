@@ -5,6 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'asky',
     environment: environment,
     firebase: 'https://asky.firebaseio.com/',
+    torii: { sessionServiceName: 'session' },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
