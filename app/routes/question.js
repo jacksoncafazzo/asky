@@ -1,6 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  beforeModel() {
+    this.get('session').fetch().catch((error) => {
+      console.log(error);
+    });
+  },
   model(params) {
     return this.store.findRecord('question', params.question_id);
   },

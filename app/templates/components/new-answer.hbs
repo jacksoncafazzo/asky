@@ -1,5 +1,8 @@
 {{#if addNewAnswer}}
-  <h1>YEAH REALLY I KNOW THESE THINGS!</h1>
+  <h2>YEAH REALLY I KNOW THESE THINGS!</h2>
+  {{#if session.isAuthenticated}}
+  don worry bro you logged in
+  {{/if}}
     <div>
       <form>
         {{md-input value=title label="I have the answer" class="col s5 validate=true"}}

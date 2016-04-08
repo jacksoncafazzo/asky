@@ -100,5 +100,12 @@ a:hover {
     text-shadow: 1px 1px 1px black;
     border-color: #b8f75e;
   }
+}
 
+.sign-up-buttons {
+  display: flex;
+  justify-content: flex-end;
+  .btn {
+    margin: 5px;
+  }
 }

@@ -1,14 +1,16 @@
-{{#if session.isAuthenticated}}
-  <p>Logged in: {{session.currentUser.email}}</p> 
-  {{#md-btn action="signOut"}}
-  Sign Out
-  {{/md-btn}}
-{{else}}
-{{sign-up signUp="signUp" user=user}}
-{{sign-in signIn="signIn" user=user password=password}}
-{{/if}}
 <div class="top-content">
-  <h4>{{new-question save2="saveQuestion"}}</h4>
+{{#if session.isAuthenticated}}
+  <p>Logged in: {{session.currentUser.email}}        {{#md-btn action="signOut"}}
+  Sign Out
+  {{/md-btn}}</p>
+
+{{else}}
+<div class="sign-up-buttons">
+  {{sign-up signUp="signUp" user=user}}
+  {{sign-in signIn="signIn" user=user password=password}}
+</div>
+{{/if}}
+  <h5>{{new-question save2="saveQuestion"}}</h5>
 </div>
 <h3 class="center">The Questions</h3>
 <hr>
