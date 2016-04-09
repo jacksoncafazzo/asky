@@ -1,0 +1,7 @@
+{{#if session.isAuthenticated}}
+username: {{userName}}
+{{md-input value=userName label="set username" class="col s5" validate="true"}}
+{{md-btn action="newUser" text="set username"}}
+
+{{else}}
+{{/if}}

@@ -3,6 +3,10 @@
   {{#link-to 'question' question.id}}
   <h5>{{question.title}}</h5>{{/link-to}}
   <p>{{question.author}}</p>
-  <button class="btn waves waves-blue" {{action 'delete' question}}>Delete</button>
+  {{#if isCurrentUser}}
+    <a class="btn" {{action 'delete' question}}>Delete</a>
+  {{else}}
+  {{/if}}
+  <!-- <button class="btn waves waves-blue" {{action 'delete' question}}>Delete</button> -->
   {{/md-card-content}}
 {{/md-card}}
