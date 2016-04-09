@@ -6,14 +6,15 @@ export default Ember.Route.extend({
       console.log(error);
     });
   },
-  currentUser: Ember.computed('userName', function() {
-    return this.get('userName');
+  currentUser: Ember.computed('session.currentUser', function() {
+    return this.get('session.currentUser');
   }),
+
   model(){
     return Ember.RSVP.hash({
       questions: this.store.findAll('question'),
       answers: this.store.findAll('answer'),
-      // userprofile: this.store.findRecord('userprofile', (this.get('userprofile.id')))
+      // userprofile: this.store.findRecord('userprofile', this.get('currentUser.profileImageURL'))
     });
   },
   actions: {
@@ -39,21 +40,29 @@ export default Ember.Route.extend({
       question.destroyRecord();
       this.transitionTo('index');
     },
-    updateUserName(userprofile, params) {
-      Object.keys(params).forEach(function(key) {
-        if(params[key]!==undefined) {
-          userprofile.set(key,params[key]);
-        }
-      });
-      userprofile.save();
-      this.transitionTo('user', userprofile.id);
-    },
     newUser(params) {
       var newUser = this.store.createRecord('userprofile', params);
       newUser.save();
-      console.log(params, newUser);
+      // console.log(params, newUser);
       this.transitionTo('index');
-    }
+    },
+    signIn(provider, params) {
+      params['provider'] = provider;
+      this.get('session').open('firebase', params).then(() => {
+        var newParams = {};
+        newParams['user'] = this.get('currentUser');
+        newParams['userName'] = params.userName;
+        newParams['joined'] = new Date();
+        var newUser = this.store.createRecord('userprofile', newParams);
+        newUser.save();
+        console.log(newUser.id);
+        // controller.set('email', null);
+        // controller.set('password', null);
+        this.transitionTo('user', newUser.id);
+      }, (error) => {
+        console.log(error);
+      });
+    },
 
   }
 });

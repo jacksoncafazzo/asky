@@ -3,12 +3,10 @@
     <div>
       <form class="new-question">
         {{md-input value=title label="What is your question?" class="col s5 validate=true"}}
-
         {{md-input value=q-notes label="Any question notes?" class="col s5 validate=true"}}
         {{md-btn text="Save" action='save1'}}
       </form>
     </div>
-    {{#x-droplet}}{{/x-droplet}}
 {{else}}
     <a class="btn" {{action 'questionFormShow'}}>Ask a Question</a>
 {{/if}}

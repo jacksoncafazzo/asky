@@ -6,6 +6,12 @@ module.exports = function(environment) {
     environment: environment,
     firebase: 'https://asky.firebaseio.com/',
     torii: { sessionServiceName: 'session' },
+    providers: {
+      'facebook-oauth2': {
+        apiKey:      'facebook-app-id',
+        // redirectUri: '' // default is the current URL
+      }
+    },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {

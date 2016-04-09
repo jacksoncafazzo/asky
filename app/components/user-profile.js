@@ -3,12 +3,12 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   showUpdateName: false,
   actions: {
-    updateUserName() {
+    updateUserName(userprofile) {
+      console.log(userprofile);
       var params = {
         userName: this.get('userName'),
-        user: this.get('session.currentUser')
       };
-      this.sendAction('updateUserName', params);
+      this.sendAction('updateUserName', userprofile, params);
     },
     showUpdateName() {
       this.set('showUpdateName', true);

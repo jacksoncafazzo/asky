@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('answer');
   this.route('about');
   this.route('sign-up');
-  this.route('user', { path:'/question/:userprofile_id' });
+  this.route('user', { path:'/user/:userprofile_id' });
 });
 
 export default Router;

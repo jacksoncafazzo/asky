@@ -1,16 +1,16 @@
 <div class="row top-content">
   <div class="col sm6">
     {{#if session.isAuthenticated}}
-    {{session.currentUser}}
-    <p>Welcome, {{model.userprofile.userName}} {{#md-btn action="signOut"}}
+    <p>Welcome, {{session.currentUser.email}} {{#md-btn action="signOut"}}
       Sign Out
       {{/md-btn}}</p>
-    {{new-user session=session newUser="newUser" userprofile=model.userprofile}}
-    {{user-profile user=session.currentUser updateUserName="updateUserName"}}
+    <!-- {{new-user session=session newUser="newUser" userprofile=model.userprofile}} -->
+    <!-- {{user-profile updateUserName="updateUserName"}} -->
+
     {{else}}
     <div class="sign-up-buttons">
       {{sign-up signUp="signUp" user=user}}
-      {{sign-in signIn="signIn" user=user password=password}}
+      {{sign-in signIn="signIn" newUser=session.currentUser password=password}}
     </div>
     {{/if}}
   </div>
