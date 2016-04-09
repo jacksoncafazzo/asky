@@ -13,6 +13,9 @@ h1 {
 
 .nav-wrapper {
   background-color: #93c54b;
+  margin-bottom: 0px;
+  position: fixed;
+  top: 0%;
 }
 
 .brand-logo img {
@@ -59,11 +62,20 @@ ul {
   border-style: solid;
 }
 
+
 .about {
   padding-left: 30%;
   padding-right: 30%;
   text-align: center;
   border-radius: 10px;
+  background-image: url('/assets/images/dawn-nature-sunset-trees.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 0px;
+  position: absolute;
+  color: white;
+  text-shadow: 2px 2px 2px black;
 }
 
 .votes img {

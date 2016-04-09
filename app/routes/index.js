@@ -18,15 +18,15 @@ export default Ember.Route.extend({
     });
   },
   actions: {
-    update(question, params) {
-      Object.keys(params).forEach(function(key) {
-        if(params[key]!==undefined) {
-          question.set(key,params[key]);
-        }
-      });
-      question.save();
-      this.transitionTo('question', question);
-    },
+    // update(question, params) {
+    //   Object.keys(params).forEach(function(key) {
+    //     if(params[key]!==undefined) {
+    //       question.set(key,params[key]);
+    //     }
+    //   });
+    //   question.save();
+    //   this.transitionTo('question', question);
+    // },
     saveQuestion(params) {
       var newQuestion = this.store.createRecord('question', params);
       newQuestion.save();
@@ -55,7 +55,6 @@ export default Ember.Route.extend({
         newParams['joined'] = new Date();
         var newUser = this.store.createRecord('userprofile', newParams);
         newUser.save();
-        console.log(newUser.id);
         // controller.set('email', null);
         // controller.set('password', null);
         this.transitionTo('user', newUser.id);

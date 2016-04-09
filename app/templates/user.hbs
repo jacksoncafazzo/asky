@@ -4,11 +4,10 @@
 <div class="col sm6">
   <h5>{{new-question save2="saveQuestion" session=session}}</h5>
 </div>
-{{show-user model.userprofile.userName}}
 <h3 class="center">The Questions</h3>
 <hr>
 <div class="questions">
   {{#each model.questions as |question|}}
-  {{question-tile question=question update="update" destroyQuestion="destroyQuestion" username=model.userprofile.userName}}
+  {{question-tile question=question update="update" destroyQuestion="destroyQuestion" userprofile=model.userprofile}}
   {{/each}}
 </div>

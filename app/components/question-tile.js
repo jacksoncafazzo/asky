@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  isCurrentUser: Ember.computed('username', 'question.author', function() {
-    if (this.get('username') === this.get('question.author' || this.get('username') === 'Jackson')) {
+  isCurrentUser: Ember.computed('userprofile.userName', 'question.author', function() {
+    if (this.get('userprofile.userName') === this.get('question.author' || this.get('userprofile.userName') === 'Jackson')) {
       return true;
     }
     else {
@@ -15,6 +15,14 @@ export default Ember.Component.extend({
             this.sendAction('destroyQuestion', question);
       }
     },
-
+    update(question, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          question.set(key,params[key]);
+        }
+      });
+      question.save();
+      this.transitionTo('question', question);
+    },
   }
 });

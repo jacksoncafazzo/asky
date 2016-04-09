@@ -5,6 +5,7 @@
   <p>{{question.author}}</p>
   {{#if isCurrentUser}}
     <a class="btn" {{action 'delete' question}}>Delete</a>
+    {{update-question update="update" question=question userprofile=userprofile}}
   {{else}}
   {{/if}}
   <!-- <button class="btn waves waves-blue" {{action 'delete' question}}>Delete</button> -->
