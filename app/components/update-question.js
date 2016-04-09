@@ -20,7 +20,7 @@ export default Ember.Component.extend({
         author: this.get('author'),
         notes: this.get('notes'),
         posted: months[newMonth] + " " + newDay + " " + newYear + " at " + newHours + ":" + newMinutes,
-        qid: this.get('question.id')
+        // qid: this.get('question.id')
       };
       this.set('updateQuestionForm', false);
       this.sendAction('update', question, params);

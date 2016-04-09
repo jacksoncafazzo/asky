@@ -6,6 +6,14 @@ module.exports = function(environment) {
     environment: environment,
     firebase: 'https://asky.firebaseio.com/',
     torii: { sessionServiceName: 'session' },
+    moment: {
+      // Options:
+      // 'all' - all years, all timezones
+      // '2010-2020' - 2010-2020, all timezones
+      // 'none' - no data, just timezone API
+      includeTimezone: 'all',
+      outputFormat: 'h:mm:ss a, MMMM Do - YYYY'
+    },
     providers: {
       'facebook-oauth2': {
         apiKey:      'facebook-app-id',

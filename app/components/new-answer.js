@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Component.extend({
   addNewAnswer: false,
@@ -7,20 +8,15 @@ export default Ember.Component.extend({
       this.set('addNewAnswer', true);
     },
     save1() {
-      var newDate = new Date();
-      var newDay = newDate.getDay();
-      var newMonth = newDate.getMonth();
-      var newYear = newDate.getFullYear();
-      var newHours = newDate.getHours();
-      var newMinutes = newDate.getMinutes();
-      var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      var newDate = moment();
       var params = {
         title: this.get('title'),
         author: this.get('session.currentUser.email'),
-        posted: months[newMonth] + " " + newDay + " " + newYear + " at " + newHours + ":" + newMinutes,
+        posted: newDate,
         question: this.get('question'),
         votes: 0
       };
+      console.log(params);
       this.set('addNewAnswer', false);
       this.sendAction('saveAnswer2', params);
       this.set('answer', "");

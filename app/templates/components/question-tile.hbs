@@ -3,6 +3,8 @@
   {{#link-to 'question' question.id}}
   <h5>{{question.title}}</h5>{{/link-to}}
   <p>{{question.author}}</p>
+  <p>{{moment-format question.posted}}</p> 
+
   {{#if isCurrentUser}}
     <a class="btn" {{action 'delete' question}}>Delete</a>
     {{update-question update="update" question=question userprofile=userprofile}}

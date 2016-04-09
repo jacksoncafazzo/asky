@@ -1,7 +1,7 @@
 {{#md-card-collapsible class="answers"}}
   {{#md-collapsible title=answer.title}}
   By: {{answer.author}}<br>
-  {{answer.posted}}
+  <p>{{moment-format answer.posted}}</p> 
   {{answer-voting answer=answer vote="vote"}}
   <a class="btn" {{action 'deleteAnswer' answer}}>delete</a>
   {{/md-collapsible}}
