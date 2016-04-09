@@ -1,0 +1,12 @@
+<p>Welcome {{model.userprofile.userName}}</p>
+{{user-profile updateUserName="updateUserName" userprofile=model.userprofile}}
+<div class="col sm6">
+  <h5>{{new-question save2="saveQuestion" userprofile=model.userprofile}}</h5>
+</div>
+<h3 class="center">The Questions</h3>
+<hr>
+<div class="questions">
+  {{#each model.questions as |question|}}
+  {{question-tile question=question update="update" destroyQuestion="destroyQuestion" userprofile=model.userprofile}}
+  {{/each}}
+</div>

@@ -1,21 +1,28 @@
-<div class="top-content">
-{{#if session.isAuthenticated}}
-  <p>Logged in: {{session.currentUser.email}}        {{#md-btn action="signOut"}}
-  Sign Out
-  {{/md-btn}}</p>
+<div class="row top-content">
+  <div class="col sm6">
+    {{#if session.isAuthenticated}}
+    <p>Welcome, {{session.currentUser.email}}
+      {{#md-btn action="signOut"}}
+      Sign Out
+      {{/md-btn}}</p>
+    <!-- {{new-user session=session newUser="newUser" userprofile=model.userprofile}} -->
+    <!-- {{user-profile updateUserName="updateUserName"}} -->
 
-{{else}}
-<div class="sign-up-buttons">
-  {{sign-up signUp="signUp" user=user}}
-  {{sign-in signIn="signIn" user=user password=password}}
-</div>
-{{/if}}
-  <h5>{{new-question save2="saveQuestion" session=session}}</h5>
+    {{else}}
+    <div class="sign-up-buttons">
+      {{sign-up signUp="signUp" user=user}}
+      {{sign-in signIn="signIn" newUser=session.currentUser password=password}}
+    </div>
+    {{/if}}
+  </div>
+  <div class="col sm6">
+    <h5>{{new-question save2="saveQuestion" session=session}}</h5>
+  </div>
 </div>
 <h3 class="center">The Questions</h3>
 <hr>
 <div class="questions">
   {{#each model.questions as |question|}}
-  {{question-tile question=question update="update" destroyQuestion="destroyQuestion"}}
+  {{question-tile question=question update="update" destroyQuestion="destroyQuestion" userprofile=model.userprofile}}
   {{/each}}
 </div>

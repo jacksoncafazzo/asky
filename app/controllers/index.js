@@ -15,16 +15,7 @@ export default Ember.Controller.extend({
         }
       });
     },
-    signIn(provider, params) {
-      console.log(provider);
-      params['provider'] = provider;
-      this.get('session').open('firebase', params).then(() => {
-        // controller.set('email', null);
-        // controller.set('password', null);
-      }, (error) => {
-        console.log(error);
-      });
-    },
+    
     signOut() {
       this.get('session').close();
     }
