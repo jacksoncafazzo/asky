@@ -1,7 +1,8 @@
 <div class="row top-content">
   <div class="col sm6">
     {{#if session.isAuthenticated}}
-    <p>Welcome, {{session.currentUser.email}} {{#md-btn action="signOut"}}
+    <p>Welcome, {{session.currentUser.email}}
+      {{#md-btn action="signOut"}}
       Sign Out
       {{/md-btn}}</p>
     <!-- {{new-user session=session newUser="newUser" userprofile=model.userprofile}} -->

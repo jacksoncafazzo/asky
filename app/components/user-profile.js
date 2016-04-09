@@ -8,6 +8,7 @@ export default Ember.Component.extend({
       var params = {
         userName: this.get('userName'),
       };
+      this.set('showUpdateName', false);
       this.sendAction('updateUserName', userprofile, params);
     },
     showUpdateName() {

@@ -14,23 +14,22 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       questions: this.store.findAll('question'),
       answers: this.store.findAll('answer'),
-      // userprofile: this.store.findRecord('userprofile', this.get('currentUser.profileImageURL'))
     });
   },
   actions: {
-    update(question, params) {
-      Object.keys(params).forEach(function(key) {
-        if(params[key]!==undefined) {
-          question.set(key,params[key]);
-        }
-      });
-      question.save();
-      this.transitionTo('question', question);
-    },
+    // update(question, params) {
+    //   Object.keys(params).forEach(function(key) {
+    //     if(params[key]!==undefined) {
+    //       question.set(key,params[key]);
+    //     }
+    //   });
+    //   question.save();
+    //   this.transitionTo('question', question);
+    // },
     saveQuestion(params) {
+      console.log(params);
       var newQuestion = this.store.createRecord('question', params);
       newQuestion.save();
-      this.transitionTo('index');
     },
     destroyAnswer(answer) {
       answer.destroyRecord();
@@ -55,7 +54,6 @@ export default Ember.Route.extend({
         newParams['joined'] = new Date();
         var newUser = this.store.createRecord('userprofile', newParams);
         newUser.save();
-        console.log(newUser.id);
         // controller.set('email', null);
         // controller.set('password', null);
         this.transitionTo('user', newUser.id);
@@ -63,6 +61,11 @@ export default Ember.Route.extend({
         console.log(error);
       });
     },
+    signUserIn(thisUser) {
+      console.log(thisUser);
+      var theUser = this.store.findRecord('userprofile', thisUser.id);
+      this.transitionTo('user', theUser.id);
+    }
 
   }
 });

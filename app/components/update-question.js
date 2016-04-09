@@ -7,6 +7,7 @@ export default Ember.Component.extend({
       this.set('updateQuestionForm', true);
     },
     update(question) {
+      console.log("here is your userprofile", question);
       var newDate = new Date();
       var newDay = newDate.getDay();
       var newMonth = newDate.getMonth();
