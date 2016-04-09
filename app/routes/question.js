@@ -1,11 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-  isCurrentUser: Ember.computed('session.currentUser.email', 'question.author', function() {
-    if (this.get('session.currentUser.email') === this.get('question.author')) {
-      return true;
-    }
-  }),
   beforeModel() {
     this.get('session').fetch().catch((error) => {
       console.log(error);
@@ -25,8 +20,6 @@ export default Ember.Route.extend({
       this.transitionTo('question', params.question);
     },
     update(question, params) {
-      console.log(question);
-      console.log(params);
       Object.keys(params).forEach(function(key) {
         if(params[key]!==undefined) {
           question.set(key,params[key]);

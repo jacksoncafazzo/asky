@@ -1,0 +1,11 @@
+{{#if session.isAuthenticated}}
+  <!-- {{userName}} -->
+  {{#if showUpdateName}}
+    {{md-input value=userName label="update username" class="col s5"}}
+    {{md-btn action="updateUserName" text="update"}}
+  {{else}}
+  {{/if}}
+  {{md-btn text="update name" action="showUpdateName"}}
+
+{{else}}
+{{/if}}
