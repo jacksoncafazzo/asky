@@ -15,7 +15,8 @@ h1 {
   background-color: #93c54b;
   margin-bottom: 0px;
   position: fixed;
-  top: 0%;
+  top: 0px;
+  z-index: 3;
 }
 
 .brand-logo img {

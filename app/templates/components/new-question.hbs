@@ -4,6 +4,10 @@
       <form class="new-question">
         {{md-input value=title label="What is your question?" class="col s5 validate=true"}}
         {{md-input value=q-notes label="Any question notes?" class="col s5 validate=true"}}
+        <p>
+          Confirm your name:
+          {{md-input value=userName label=userprofile.userName}}
+        </p>
         {{md-btn text="Save" action='save1'}}
       </form>
     </div>

@@ -29,10 +29,14 @@ export default Ember.Route.extend({
       this.model.save();
       this.transitionTo('index');
     },
-    saveQuestion(userprofile, params) {
+    saveQuestion(params) {
       var newQuestion = this.store.createRecord('question', params);
       newQuestion.save();
-      this.transitionTo('user', userprofile.id);
     },
+    destroyQuestion(question) {
+      if (confirm('Are you sure you want to delete this question?')) {
+        question.destroyRecord();
+      }
+    }
   }
 });

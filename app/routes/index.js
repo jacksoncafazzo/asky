@@ -14,7 +14,6 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       questions: this.store.findAll('question'),
       answers: this.store.findAll('answer'),
-      // userprofile: this.store.findRecord('userprofile', this.get('currentUser.profileImageURL'))
     });
   },
   actions: {
@@ -28,9 +27,9 @@ export default Ember.Route.extend({
     //   this.transitionTo('question', question);
     // },
     saveQuestion(params) {
+      console.log(params);
       var newQuestion = this.store.createRecord('question', params);
       newQuestion.save();
-      this.transitionTo('index');
     },
     destroyAnswer(answer) {
       answer.destroyRecord();
@@ -62,6 +61,11 @@ export default Ember.Route.extend({
         console.log(error);
       });
     },
+    signUserIn(thisUser) {
+      console.log(thisUser);
+      var theUser = this.store.findRecord('userprofile', thisUser.id);
+      this.transitionTo('user', theUser.id);
+    }
 
   }
 });
