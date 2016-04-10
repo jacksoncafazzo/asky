@@ -2,8 +2,42 @@
 @import 'ember-cli-materialize';
 
 html, body {
+  background: transparent;
   width: 100%;
   height: 100%;
+}
+
+h1, h2, h3,
+h4, h5, h6, img {
+    @extend %headings !optional;
+}
+
+.about-container > %headings {
+  margin-top: 500px;
+
+}
+
+.about-container {
+
+}
+
+.about {
+  // padding-left: 30%;
+  // padding-right: 30%;
+  // text-align: center;
+  // border-radius: 10px;
+  // backface-visibility: hidden;
+  // margin-top: 0px;
+  // position: relative;
+  // z-index: 3;
+  // color: white;
+  // text-shadow: 2px 2px 2px black;
+  background-color: transparent;
+
+}
+
+.section {
+  background: radial-gradient(#C7DEA0, #CDE0AA, rgba(255,0,0,0));
 }
 
 h1 {
@@ -13,10 +47,12 @@ h1 {
 
 .nav-wrapper {
   background-color: #93c54b;
-  margin-bottom: 0px;
+  padding-bottom: 0px;
   position: fixed;
   top: 0px;
-  z-index: 3;
+  z-index: 10;
+  background: linear-gradient(#93c54b, #FAF5F2);
+  border: 0px;
 }
 
 .brand-logo img {
@@ -25,31 +61,66 @@ h1 {
   max-height: 60px;
 }
 
-ul {
-  list-style: none;
-  padding-left: 0px;
+.page-wrapper {
+  background: linear-gradient(#FAF5F2, #93c54b);
+  width: 100%;
+  // top: 60px;
+  // display: flex;
+  // position: absolute;
 }
 
 .top-content {
-  padding-top: 15px;
+  width: 100%;
+  z-index: 3;
+  flex-flow: column wrap;
+  align-items: flex-end;
   display: flex;
-  flex-flow: row-reverse wrap;
-  align-items: center;
-  justify-content: space-around;
+  align-items: right;
+  justify-content: center;
+  position: fixed;
   img {
     width: 224px;
   }
+  .profile-name {
+    padding-top: 15px;
+    padding-bottom: 5px;
+  }
+  .btn {
+    margin: 5px;
+  }
+
 }
 
+.row {
+  margin-bottom: 0px;
+
+}
+
+#newquestion {
+  max-width: 100%;
+}
+.ask {
+
+}
 .questions {
+  position:relative;
+  z-index: 2;
+  top: 125px;
+  margin-bottom: 200px;
   display: flex;
-  flex-flow: wrap row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.question-card {
-  width: 220px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: 10%;
+  margin-right: 10%;
+  li {
+    opacity: 0;
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid green;
+    width: 300px;
+    transform: translateX(0px);
+    opacity: 1;
+  }
 }
 
 .question-details {
@@ -63,32 +134,16 @@ ul {
   border-style: solid;
 }
 
-
-.about {
-  padding-left: 30%;
-  padding-right: 30%;
-  text-align: center;
-  border-radius: 10px;
-  background-image: url('/assets/images/dawn-nature-sunset-trees.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  padding-top: 0px;
-  position: absolute;
-  color: white;
-  text-shadow: 2px 2px 2px black;
-}
-
 .votes img {
   height: 30px;
   cursor: pointer;
 }
 
-.btn {
+.btn, .btn-large {
   background-color: #93c54b;
 
 }
-.btn:hover {
+.btn:hover, .btn-large:hover {
   background-color: #b8f75e;
 }
 
@@ -103,22 +158,33 @@ a:hover {
 
 // label underline color
 .input-field {
+  input {
+    width: 900px;
+  }
   label {
-    color: #b8f75e
+    color: white;
+    font-size: 1.5em;
+    text-shadow: 2px 2px 2px black;
   }
   input[type=text]:focus + label {
     color: #b8f75e;
     text-align: center;
-    font-size: +.5em;
+    font-size: +1.2em;
     text-shadow: 1px 1px 1px black;
-    border-color: #b8f75e;
+    // border-color: #b8f75e;
   }
 }
 
-.sign-up-buttons {
-  display: flex;
-  justify-content: flex-end;
-  .btn {
-    margin: 5px;
+.footer-wrapper {
+  height: 150px;
+  position: relative;
+  bottom: 0px;
+  z-index: 4;
+  background: linear-gradient(#93c54b, #FAF5F2);
+  p {
+    padding-top: 40px;
+    padding-right: 20px;
+    font-size: 1.2em;
+    text-align: right;
   }
 }
