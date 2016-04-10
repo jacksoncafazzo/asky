@@ -1,21 +1,20 @@
 {{#if showSignUp}}
-<div class='page-header'>
   <h1>Sign Up</h1>
-</div>
-{{input
-  type='text'
-  class='form-control'
-  value=email
-  placeholder='email'
-}}
-{{input
-  type='password'
-  class='form-control'
-  value=password
-  placeholder='password'
-}}
-<a class='btn btn-default'
-  {{ action 'signUp' }}>Sign Up</a>
+  {{md-input
+    type='text'
+    class='form-control col sm5'
+    value=email
+    label='email'
+  }}
+  {{md-input
+    type='password'
+    class='form-control col sm5'
+    value=password
+    label='password'
+  }}
+  <div class="col sm1">
+    {{md-btn action='signUp' text='sign up' buttonType="large"}}
+  </div>
 {{else}}
-  {{md-btn action="showSignUp" text="Sign Up"}}
+  {{md-btn action="showSignUp" text="Sign Up" buttonType="large"}}
 {{/if}}

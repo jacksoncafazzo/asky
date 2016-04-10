@@ -2,23 +2,23 @@
 <div class='row'>
   <h1>Sign In</h1>
 </div>
-{{input
+{{md-input
   type='text'
-  class='form-control'
+  class='form-control col sm12'
   value=email
-  placeholder='email'
+  label='email'
 }}
-{{input
+{{md-input
   type='password'
-  class='form-control'
+  class='form-control col sm12'
   value=password
-  placeholder='password'
+  label='password'
 }}
-{{input
+{{md-input
   type='text'
-  class='form-control'
+  class='form-control col sm12'
   value=userName
-  placeholder="User Name"
+  label="User Name"
 }}
 {{#if session.isWorking}}
 Signing in
@@ -28,5 +28,5 @@ Signing in
 {{ action 'signIn' 'password'}}>Sign In</a>
 {{/if}}
 {{else}}
-  {{md-btn action="showSignIn" text="Sign In"}}
+  {{md-btn action="showSignIn" text="Sign In" buttonType="large"}}
 {{/if}}

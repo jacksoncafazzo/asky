@@ -1,14 +1,22 @@
-<p>Welcome {{model.userprofile.userName}}</p>
-{{user-profile updateUserName="updateUserName" userprofile=model.userprofile}}
-<div class="col sm6">
-  <h5>{{new-question save2="saveQuestion" userprofile=model.userprofile}}</h5>
-</div>
-<a class="btn" onclick="Materialize.showStaggeredList('#questions')">The Questions</a>
-<hr>
-<ul>
-  <div class="questions" id="questions">
-    {{#each model.questions as |question|}}
-    {{question-tile question=question update="update" destroyQuestion="destroyQuestion" userprofile=model.userprofile}}
-    {{/each}}
+
+<div class="row top-content">
+  <div class="col s12">
+    <p>Welcome {{model.userprofile.userName}}</p>
+    {{user-profile updateUserName="updateUserName" userprofile=model.userprofile}}
   </div>
-</ul>
+  <div class="col s12">
+    {{new-question save2="saveQuestion" userprofile=model.userprofile}}
+  </div>
+  <div class="col s12">
+    <a class="btn" onclick="Materialize.showStaggeredList('#questions')">The Questions</a>
+  </div>
+</div>
+<div class="row">
+  <ul>
+    <div class="questions" id="questions">
+      {{#each model.questions as |question|}}
+      {{question-tile question=question update="update" destroyQuestion="destroyQuestion" userprofile=model.userprofile}}
+      {{/each}}
+    </div>
+  </ul>
+</div>
