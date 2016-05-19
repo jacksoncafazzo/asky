@@ -2,6 +2,7 @@
   <div class="q-display">
     <h3>{{question.title}}</h3>
     <h4 class="q-author">{{question.author}}</h4>
+    <p>{{service.service}}</p>
   </div>
   <div class="q-notes">
     <h5>{{question.notes}}</h5>
@@ -16,5 +17,4 @@
     {{answer-tile answer=answer vote="vote" deleteAnswer='deleteAnswer'}}
     {{/each}}
   </div>
-  <hr>
 </div>

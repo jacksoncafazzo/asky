@@ -58,10 +58,10 @@ h1 {
   img {
     width: 224px;
   }
-  .profile-name {
-    padding-top: 15px;
-    padding-bottom: 5px;
-  }
+  // .profile-name {
+  //   padding-top: 15px;
+  //   padding-bottom: 5px;
+  // }
   .btn {
 
     margin: 5px;
@@ -71,16 +71,35 @@ h1 {
 }
 
 .top-content {
+  position: fixed;
+  top: 80px;
+  right: 0px;
   display: flex;
   flex-flow: column wrap;
   justify-content: flex-end;
   align-items: flex-end;
   width: 100%;
   .section {
-    width: 250px;
+    min-width: 250px;
   }
   .btn, .btn-large {
     margin: 5px;
+  }
+}
+
+.user-content {
+  margin-right: 0px;
+  z-index: 4;
+  display: flex;
+  position: fixed;
+  top: 57px;
+  right: 10px;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  .section {
+    min-width: 260px;
   }
 }
 
@@ -99,7 +118,6 @@ h1 {
   // position:relative;
   z-index: 2;
   top: 125px;
-  margin-bottom: 200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

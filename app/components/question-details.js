@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  service: Ember.inject.service('display-service'),
   actions: {
     update(question, params) {
     this.sendAction('update', question, params);
@@ -18,5 +19,6 @@ export default Ember.Component.extend({
         this.sendAction('destroyAnswer', answer);
       }
     },
+    
   }
 });
